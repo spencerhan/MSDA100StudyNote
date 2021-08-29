@@ -72,3 +72,9 @@ ____________________________________________________________________
 #### Text.Clean, Text.End, Text.Length, Text.Lower, Text.Middle, Text.Proper (captalising every first letter), Text.Start, Text.Trim, Text.Upper
 
 #### 2.1.2 duplicate query in power query, only creates a reference to the first data query.
+
+     
+
+
+#### 2.1.3 default filter applies step by step transformation. Therefore, after moved away from a previously applied filter step, cannot unfilter what had been filtered. 
+#### 2.1.4 M function splitter start with 0 index. 
