@@ -71,10 +71,22 @@ ____________________________________________________________________
 ____________________________________________________________________
 #### Text.Clean, Text.End, Text.Length, Text.Lower, Text.Middle, Text.Proper (captalising every first letter), Text.Start, Text.Trim, Text.Upper
 
-#### 2.1.2 duplicate query in power query, only creates a reference to the first data query.
+
+### <2> Transform Data
+#### 2.2.1 duplicate query in power query, only creates a reference to the first data query.
 
      
 
 
-#### 2.1.3 default filter applies step by step transformation. Therefore, after moved away from a previously applied filter step, cannot unfilter what had been filtered. 
-#### 2.1.4 M function splitter start with 0 index. 
+#### 2.2.2 default filter applies step by step transformation. Therefore, after moved away from a previously applied filter step, cannot unfilter what had been filtered. 
+#### 2.2.3 M function splitter start with 0 index. 
+#### 2.2.4 unpivot selected column will be affected if the data model is changed, whereas unpivot column and unpivot other column will not be affected. 
+#### 2.2.5 unpivioting nest column, transpose to fill down missing value, then unpivot.
+#### 2.2.6 transform merge column remove original columns, add column merge column creates a new column.
+
+#### 2.2.7.trim -> removing leading and trailing spaces, replace -> useful for removing double spaces. 
+
+#### 2.2.8 date function in power query -> #date(yyyy,mm,dd), duration function #duration(day,hour,minute,second), time function #time(hour,minute,second)
+
+#### 2.2.9 List.Numbers(), List.Dates(), List.Times()
+
