@@ -90,3 +90,5 @@ ____________________________________________________________________
 
 #### 2.2.9 List.Numbers(), List.Dates(), List.Times()
 
+#### 2.2.10 Date.From(), DateTime.LocalNow(), DateTime.FixedLocalNow()
+
