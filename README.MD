@@ -1,4 +1,6 @@
-# PowerBI note
+# Power BI note
+
+### Study notes used when strengthening Power BI skills
 
 ## Part 1: Visualising data. 
 
@@ -38,7 +40,9 @@
 #### 1.2.16 tree decomposition shows how a measure breaks down at different levels. high values, low values. 
 #### 1.2.17 PBIDS (power bi desktop source) pointer to a data source. PBIDS is a json object. (just double click to open, instead of adding data within power bi).
 #### 1.2.18 paginate report created by power bi report builder. (used for pixel wise perfect), it's an additional licensing. row groups expand vertically, column group expand horizontally (i.e. row level total). 
-
+#### 1.2.19 anomaly detection only works for line chart, only works for one measure and does not work for forecasting. Sensitivity -> how far a line chart can drift from the central line.
+#### 1.2.20 identify outliers in powerbi: https://datacornering.com/how-to-identify-outliers-in-microsoft-power-bi/
+#### 1.2.21 Smart narrative vs summarize: smart narrative gives narratives for all visuals on a page, summarize only gives narratives for one particular visual. Does not work for other than line visuals so far.  
 
 ## Part 2: Get and Transform data.
 
@@ -92,3 +96,23 @@ ____________________________________________________________________
 
 #### 2.2.10 Date.From(), DateTime.LocalNow(), DateTime.FixedLocalNow()
 
+### <3> Get Data from other sources
+
+#### 2.3.1 reading data from sql server -> Include relationship column will also query related tables. 
+
+#### 2.3.2 Import vs DirectQuery pros and cons: https://docs.microsoft.com/en-us/power-bi/connect-data/desktop-use-directquery, DirectQuery better for large query and ensures up-to-date data,cannot change from Import to DirectQuery mode, but can change from DirectQuery to Import mode.
+
+#### 2.3.3 PowerBI auto page refresh for ever  interval and change detection -> check changes for every X interval (seconds in premium Power BI service).
+
+#### 2.3.4 Dataverse -> new name for CDS (common data service), data service used in Power platform.
+#### 2.3.5 choose the appropriate query type  (https://www.pbiusergroup.com/communities/community-home/digestviewer/viewthread?MessageKey=2296a913-4b3e-4489-94b0-016b0d1f44ec&CommunityKey=b53b454c-0560-4600-a098-9b1887af0d85&tab=digestviewer)
+#### 2.3.6 diagnostics 
+
+#### 2.3.7 Text Analytics (requires power bi premium), Vision (requires power bi premium) and Azure Machine learning (Azure machine learning workspace)
+
+
+## Part 3: Model data. 
+
+### <1> DAX Function
+#### 3.1.1 Relationship direction in relation diagram matters. Cross filter direction is single is more efficient in most case (not degrading performance), however, relationship is not measured from the pointee to pointer.   
+#### 3.1.2 DAX needs to use BLANK() if want to set cell to no value.
