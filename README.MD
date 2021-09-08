@@ -116,3 +116,29 @@ ____________________________________________________________________
 ### <1> DAX Function
 #### 3.1.1 Relationship direction in relation diagram matters. Cross filter direction is single is more efficient in most case (not degrading performance), however, relationship is not measured from the pointee to pointer.   
 #### 3.1.2 DAX needs to use BLANK() if want to set cell to no value.
+#### 3.1.3 instead of using the new measure button on modelling, it's better to select the query first, and then choose create new query. 
+#### 3.1.4 INT function in DAX rounding down to the nearest integer, hence -3.6 = -4 whereas 3.6 = 3
+#### 3.1.5 TRUNC function simply removes the decimal part. 
+#### 3.1.6 always provide 'not found' action in search() function. search() is case insensitive, find() is case sensitive. 
+#### 3.1.7 DAX is base 1, index start from 1 instead of 0. 
+#### 3.1.8 Replace() uses position, Substitute uses known text. 
+#### 3.1.9 related() is useful the go from downstream tables to against the relationship arrow and pull information from other tables (from many to one). 
+#### 3.1.10 relatedtable() return a filtered table (aka context, not a single column), then can use table operations such as sumx() to perform aggregation. it's provide better performance when using in visuals. 
+#### 3.1.11 all() removes the context from a related table.
+#### 3.1.12 filter() goes further down the granular detail. (can be replace with a if(sumx()) chain). 
+#### 3.1.13 calculate() acting as a wrapper which has the context build in as a parameter then a regular calculation. function as another parameter. sumx(all()) = calculate(sumx(),all()).
+#### 3.1.14 min/max() return a value, first/last() return a table/column.
+#### 3.1.15 be aware of the context of date when using nextday and previousday, do not use hierarchy.
+#### 3.1.16 TOTALMTD and OPENINGBALANCEMONTH do not use CALCULATE() wrapper.
+#### 3.1.17 time based measures are usually is semi additive measure. you can only sum up measures during a specific period. 
+#### 3.1.18 NATURALINNERJOIN() = MERGE Query
+#### 3.2.19 'Make the relation active', in power bi, you can only have one active relationship on columns between two  tables.
+
+#### 3.2.20 role playing model, more than one relationship between two tables. 
+#### 3.2.21 userelationship() to choose different relationship between two tables. 
+#### 3.2.22 if no relationship between tables is defined, the <b>maximum</b> amount will be used in measurements. 
+#### 3.2.23 when dealing with mismatched m-to-m relationship, can create a 'bridge' table uses only the mismatched column that union the common factor columns together from two tables. 
+#### 3.2.24 another way dealing with m-to-m relationship is to define the cardinality in relationship property window. 
+#### 3.2.25 last way to deal with m-to-m relationship is to create an aggregation of the measure using 'group by'. 
+#### 3.2.26 View -> Performance analyzer
+#### 3.2.27 Power Query -> Tools -> diagnostics
