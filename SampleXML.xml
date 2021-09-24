@@ -1,383 +1,120 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<!DOCTYPE web-app
-    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN"
-    "http://java.sun.com/j2ee/dtds/web-app_2.2.dtd">
-<web-app>
-    <servlet>
-        <servlet-name>
-            cofaxCDS
-        </servlet-name>
-        <servlet-class>
-            org.cofax.cds.CDSServlet
-        </servlet-class>
-
-         <init-param>
-          <param-name>configGlossary:installationAt</param-name>
-      <param-value>Philadelphia, PA</param-value>
-        </init-param>
-        <init-param>
-          <param-name>configGlossary:adminEmail</param-name>
-      <param-value>ksm@pobox.com</param-value>
-        </init-param>
-        <init-param>
-          <param-name>configGlossary:poweredBy</param-name>
-      <param-value>Cofax</param-value>
-        </init-param>
-        <init-param>
-          <param-name>configGlossary:poweredByIcon</param-name>
-      <param-value>/images/cofax.gif</param-value>
-        </init-param>
-        <init-param>
-          <param-name>configGlossary:staticPath</param-name>
-      <param-value>/content/static</param-value>
-        </init-param>
-
-     <init-param>
-          <param-name>templateProcessorClass</param-name>
-      <param-value>org.cofax.WysiwygTemplate</param-value>
-        </init-param>
-
-    <init-param>
-          <param-name>templateLoaderClass</param-name>
-      <param-value>org.cofax.FilesTemplateLoader</param-value>
-        </init-param>
-
-         <init-param>
-          <param-name>templatePath</param-name>
-      <param-value>templates</param-value>
-        </init-param>
-
-        <init-param>
-          <param-name>templateOverridePath</param-name>
-      <param-value></param-value>
-        </init-param>
-
-     <init-param>
-          <param-name>defaultListTemplate</param-name>
-      <param-value>listTemplate.htm</param-value>
-        </init-param>
-
-       <init-param>
-          <param-name>defaultFileTemplate</param-name>
-      <param-value>articleTemplate.htm</param-value>
-        </init-param>
-
-       <init-param>
-          <param-name>useJSP</param-name>
-      <param-value>false</param-value>
-        </init-param>
-
-    <init-param>
-          <param-name>jspListTemplate</param-name>
-      <param-value>listTemplate.jsp</param-value>
-        </init-param>
-
-       <init-param>
-          <param-name>jspFileTemplate</param-name>
-      <param-value>articleTemplate.jsp</param-value>
-        </init-param>
-
-     <init-param>
-          <param-name>cachePackageTagsTrack</param-name>
-      <param-value>200</param-value>
-        </init-param>
-
-    <init-param>
-          <param-name>cachePackageTagsStore</param-name>
-      <param-value>200</param-value>
-        </init-param>
-
-    <init-param>
-          <param-name>cachePackageTagsRefresh</param-name>
-      <param-value>60</param-value>
-        </init-param>
-
-     <init-param>
-          <param-name>cacheTemplatesTrack</param-name>
-      <param-value>100</param-value>
-        </init-param>
-
-    <init-param>
-          <param-name>cacheTemplatesStore</param-name>
-      <param-value>50</param-value>
-        </init-param>
-
-    <init-param>
-          <param-name>cacheTemplatesRefresh</param-name>
-      <param-value>15</param-value>
-        </init-param>
-
-    <init-param>
-          <param-name>cachePagesTrack</param-name>
-      <param-value>200</param-value>
-        </init-param>
-
-    <init-param>
-          <param-name>cachePagesStore</param-name>
-      <param-value>100</param-value>
-        </init-param>
-
-    <init-param>
-          <param-name>cachePagesRefresh</param-name>
-      <param-value>10</param-value>
-        </init-param>
-
-    <init-param>
-          <param-name>cachePagesDirtyRead</param-name>
-      <param-value>10</param-value>
-        </init-param>
-
-     <init-param>
-          <param-name>searchEngineListTemplate</param-name>
-      <param-value>forSearchEnginesList.htm</param-value>
-        </init-param>
-
-       <init-param>
-          <param-name>searchEngineFileTemplate</param-name>
-      <param-value>forSearchEngines.htm</param-value>
-        </init-param>
-
-       <init-param>
-          <param-name>searchEngineRobotsDb</param-name>
-      <param-value>WEB-INF/robots.db</param-value>
-        </init-param>
-
-    <init-param>
-          <param-name>useDataStore</param-name>
-      <param-value>true</param-value>
-        </init-param>
-
-     <init-param>
-          <param-name>dataStoreClass</param-name>
-      <param-value>org.cofax.SqlDataStore</param-value>
-        </init-param>
-
-        <init-param>
-          <param-name>redirectionClass</param-name>
-      <param-value>org.cofax.SqlRedirection</param-value>
-        </init-param>
-        <init-param>
-          <param-name>dataStoreName</param-name>
-      <param-value>cofax</param-value>
-        </init-param>
-
-        <init-param>
-          <param-name>dataStoreDriver</param-name>
-      <param-value>com.microsoft.jdbc.sqlserver.SQLServerDriver</param-value>
-        </init-param>
-
-         <init-param>
-          <param-name>dataStoreUrl</param-name>
-      <param-value>jdbc:microsoft:sqlserver://LOCALHOST:1433;DatabaseName=goon</param-value>
-        </init-param>
-
-        <init-param>
-          <param-name>dataStoreUser</param-name>
-      <param-value>sa</param-value>
-        </init-param>
-
-         <init-param>
-          <param-name>dataStorePassword</param-name>
-      <param-value></param-value>
-        </init-param>
-
-         <init-param>
-          <param-name>dataStoreTestQuery</param-name>
-      <param-value>SET NOCOUNT ON;select test='test';</param-value>
-        </init-param>
-
-         <init-param>
-          <param-name>dataStoreLogFile</param-name>
-      <param-value>/usr/local/tomcat/logs/datastore.log</param-value>
-        </init-param>
-
-         <init-param>
-          <param-name>dataStoreInitConns</param-name>
-      <param-value>10</param-value>
-        </init-param>
-
-         <init-param>
-          <param-name>dataStoreMaxConns</param-name>
-      <param-value>100</param-value>
-        </init-param>
-
-         <init-param>
-          <param-name>dataStoreConnUsageLimit</param-name>
-      <param-value>100</param-value>
-        </init-param>
- <init-param>
-          <param-name>dataStoreLogLevel</param-name>
-      <param-value>debug</param-value>
-        </init-param>
-
-     <init-param>
-          <param-name>maxUrlLength</param-name>
-      <param-value>500</param-value>
-        </init-param>
-
-    </servlet>
-
-     <servlet>
-        <servlet-name>
-            cofaxEmail
-        </servlet-name>
-        <servlet-class>
-            org.cofax.cds.EmailServlet
-        </servlet-class>
-
-         <init-param>
-          <param-name>mailHost</param-name>
-      <param-value>mail1</param-value>
-        </init-param>
-
-        <init-param>
-          <param-name>mailHostOverride</param-name>
-      <param-value>mail2</param-value>
-        </init-param>
-    </servlet>
-
-    <servlet>
-        <servlet-name>
-            cofaxAdmin
-        </servlet-name>
-        <servlet-class>
-            org.cofax.cds.AdminServlet
-        </servlet-class>
-    </servlet>
-
-    <servlet>
-         <servlet-name>
-             fileServlet
-         </servlet-name>
-         <servlet-class>
-             org.cofax.cds.FileServlet
-         </servlet-class>
-    </servlet>
-
-   <servlet>
-        <servlet-name>
-            cofaxTools
-        </servlet-name>
-        <servlet-class>
-            org.cofax.cms.CofaxToolsServlet
-        </servlet-class>
-
-         <init-param>
-          <param-name>templatePath</param-name>
-          <param-value>toolstemplates/</param-value>
-        </init-param>
-
-         <init-param>
-          <param-name>log</param-name>
-          <param-value>1</param-value>
-        </init-param>
-
-         <init-param>
-          <param-name>logLocation</param-name>
-          <param-value>/usr/local/tomcat/logs/CofaxTools.log</param-value>
-        </init-param>
-
-         <init-param>
-          <param-name>logMaxSize</param-name>
-          <param-value></param-value>
-        </init-param>
-
-         <init-param>
-          <param-name>dataLog</param-name>
-          <param-value>1</param-value>
-        </init-param>
-
-         <init-param>
-          <param-name>dataLogLocation</param-name>
-          <param-value>/usr/local/tomcat/logs/dataLog.log</param-value>
-        </init-param>
-
-         <init-param>
-          <param-name>dataLogMaxSize</param-name>
-          <param-value></param-value>
-        </init-param>
-
-         <init-param>
-          <param-name>removePageCache</param-name>
-          <param-value>/content/admin/remove?cache=pages&id=</param-value>
-        </init-param>
-
-         <init-param>
-          <param-name>removeTemplateCache</param-name>
-          <param-value>/content/admin/remove?cache=templates&id=</param-value>
-        </init-param>
-
-         <init-param>
-          <param-name>fileTransferFolder</param-name>
-          <param-value>/usr/local/tomcat/webapps/content/fileTransferFolder</param-value>
-        </init-param>
-
-         <init-param>
-          <param-name>lookInContext</param-name>
-          <param-value>1</param-value>
-        </init-param>
-
-        <init-param>
-          <param-name>adminGroupID</param-name>
-          <param-value>4</param-value>
-        </init-param>
-
-        <init-param>
-          <param-name>betaServer</param-name>
-          <param-value>true</param-value>
-        </init-param>
-
-    </servlet>
-
-    <servlet-mapping>
-    <servlet-name>
-    cofaxCDS
-    </servlet-name>
-    <url-pattern>
-    /
-    </url-pattern>
-    </servlet-mapping>
-
-    <servlet-mapping>
-    <servlet-name>
-    cofaxEmail
-    </servlet-name>
-    <url-pattern>
-    /cofaxutil/aemail/*
-    </url-pattern>
-    </servlet-mapping>
-
-    <servlet-mapping>
-        <servlet-name>
-        cofaxAdmin
-        </servlet-name>
-        <url-pattern>
-        /admin/*
-        </url-pattern>
-    </servlet-mapping>
-
-    <servlet-mapping>
-         <servlet-name>
-         fileServlet
-         </servlet-name>
-         <url-pattern>
-         /static/*
-         </url-pattern>
-     </servlet-mapping>
-
-  <servlet-mapping>
-        <servlet-name>
-        cofaxTools
-        </servlet-name>
-        <url-pattern>
-        /tools/*
-        </url-pattern>
-    </servlet-mapping>
-
-   <taglib>
-      <taglib-uri>cofax.tld</taglib-uri>
-      <taglib-location>/WEB-INF/tlds/cofax.tld</taglib-location>
-   </taglib>
-
-</web-app>
+<?xml version="1.0"?>
+<catalog>
+   <book id="bk101">
+      <author>Gambardella, Matthew</author>
+      <title>XML Developer's Guide</title>
+      <genre>Computer</genre>
+      <price>44.95</price>
+      <publish_date>2000-10-01</publish_date>
+      <description>An in-depth look at creating applications 
+      with XML.</description>
+   </book>
+   <book id="bk102">
+      <author>Ralls, Kim</author>
+      <title>Midnight Rain</title>
+      <genre>Fantasy</genre>
+      <price>5.95</price>
+      <publish_date>2000-12-16</publish_date>
+      <description>A former architect battles corporate zombies, 
+      an evil sorceress, and her own childhood to become queen 
+      of the world.</description>
+   </book>
+   <book id="bk103">
+      <author>Corets, Eva</author>
+      <title>Maeve Ascendant</title>
+      <genre>Fantasy</genre>
+      <price>5.95</price>
+      <publish_date>2000-11-17</publish_date>
+      <description>After the collapse of a nanotechnology 
+      society in England, the young survivors lay the 
+      foundation for a new society.</description>
+   </book>
+   <book id="bk104">
+      <author>Corets, Eva</author>
+      <title>Oberon's Legacy</title>
+      <genre>Fantasy</genre>
+      <price>5.95</price>
+      <publish_date>2001-03-10</publish_date>
+      <description>In post-apocalypse England, the mysterious 
+      agent known only as Oberon helps to create a new life 
+      for the inhabitants of London. Sequel to Maeve 
+      Ascendant.</description>
+   </book>
+   <book id="bk105">
+      <author>Corets, Eva</author>
+      <title>The Sundered Grail</title>
+      <genre>Fantasy</genre>
+      <price>5.95</price>
+      <publish_date>2001-09-10</publish_date>
+      <description>The two daughters of Maeve, half-sisters, 
+      battle one another for control of England. Sequel to 
+      Oberon's Legacy.</description>
+   </book>
+   <book id="bk106">
+      <author>Randall, Cynthia</author>
+      <title>Lover Birds</title>
+      <genre>Romance</genre>
+      <price>4.95</price>
+      <publish_date>2000-09-02</publish_date>
+      <description>When Carla meets Paul at an ornithology 
+      conference, tempers fly as feathers get ruffled.</description>
+   </book>
+   <book id="bk107">
+      <author>Thurman, Paula</author>
+      <title>Splish Splash</title>
+      <genre>Romance</genre>
+      <price>4.95</price>
+      <publish_date>2000-11-02</publish_date>
+      <description>A deep sea diver finds true love twenty 
+      thousand leagues beneath the sea.</description>
+   </book>
+   <book id="bk108">
+      <author>Knorr, Stefan</author>
+      <title>Creepy Crawlies</title>
+      <genre>Horror</genre>
+      <price>4.95</price>
+      <publish_date>2000-12-06</publish_date>
+      <description>An anthology of horror stories about roaches,
+      centipedes, scorpions  and other insects.</description>
+   </book>
+   <book id="bk109">
+      <author>Kress, Peter</author>
+      <title>Paradox Lost</title>
+      <genre>Science Fiction</genre>
+      <price>6.95</price>
+      <publish_date>2000-11-02</publish_date>
+      <description>After an inadvertant trip through a Heisenberg
+      Uncertainty Device, James Salway discovers the problems 
+      of being quantum.</description>
+   </book>
+   <book id="bk110">
+      <author>O'Brien, Tim</author>
+      <title>Microsoft .NET: The Programming Bible</title>
+      <genre>Computer</genre>
+      <price>36.95</price>
+      <publish_date>2000-12-09</publish_date>
+      <description>Microsoft's .NET initiative is explored in 
+      detail in this deep programmer's reference.</description>
+   </book>
+   <book id="bk111">
+      <author>O'Brien, Tim</author>
+      <title>MSXML3: A Comprehensive Guide</title>
+      <genre>Computer</genre>
+      <price>36.95</price>
+      <publish_date>2000-12-01</publish_date>
+      <description>The Microsoft MSXML3 parser is covered in 
+      detail, with attention to XML DOM interfaces, XSLT processing, 
+      SAX and more.</description>
+   </book>
+   <book id="bk112">
+      <author>Galos, Mike</author>
+      <title>Visual Studio 7: A Comprehensive Guide</title>
+      <genre>Computer</genre>
+      <price>49.95</price>
+      <publish_date>2001-04-16</publish_date>
+      <description>Microsoft Visual Studio 7 is explored in depth,
+      looking at how Visual Basic, Visual C++, C#, and ASP+ are 
+      integrated into a comprehensive development 
+      environment.</description>
+   </book>
+</catalog>

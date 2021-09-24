@@ -142,3 +142,41 @@ ____________________________________________________________________
 #### 3.2.25 last way to deal with m-to-m relationship is to create an aggregation of the measure using 'group by'. 
 #### 3.2.26 View -> Performance analyzer
 #### 3.2.27 Power Query -> Tools -> diagnostics
+
+## Part 4: Power BI premium. 
+
+#### 4.1 Dashboard created from PowerBi workbook (hosted excel) does not automatically refresh when underlying data changed. The excel needs to be configured as table otherwise it will not be created as workbook.
+
+#### 4.2 Quick insights -> sample insight charts.
+#### 4.3 data -> setting -> lineage shows the dependency.
+#### 4.4 role level security, dynamic row level security and object level security. 
+#### In powerbi desktop, DAX username() = domain\user; userprincipalname() = email address
+#### In powerbi service, username() = userprincipalname() = email address. 
+#### test role
+#### object level role, tabular editor https://www.sqlbi.com/tools/tabular-editor/
+
+#### 4.5 dashboard vs reports (dashboard cannot do slicing, single page, cannot see any underlying data, cannot view related content, can create alerts in dashboard, can set feature dashboard, there is no featured report.) 
+
+#### 4.6 row level security, streaming tiles, video tiles, customised tiles are not available for subscription. The subscription is tied to the report name, if report is renamed then the subscription has to be updated. 
+#### 4.7 report is shared and contain read only content cannot be pinned.
+#### 4.8 live page uses the report theme instead of dashboard theme. 
+#### 4.9 alert only sent when data is changed.
+#### 4.10 analyze in excel
+#### 4.11 endorsing a dataset (certified (administration task) vs promoted)
+#### 4.12 on-premise data gateway (personal mode - one user, only power bi, supports R and Python; standard mode - power bi + azure logic apps, power automate etc, does not support R and Python)
+
+#### 4.13 power bi pro 8 refreshes a day, premium 48 times. 
+#### 4.14 auto data refresh will stope if there are 4 times failures in a row and report is viewed in past two months. In addition the refresh is for data refresh not model refresh. 
+#### 4.15 query folding, trim down data before load into power bi vs load all data into power bi then filter down. 
+#### 4.16 incremental refresh: firstly start working with smaller set of data; then create parameters; lastly the range of data to be stored and the range of data to be refreshed. 
+#### 4.17 workspace, members main for managing/sharing apps/items and adding other members; contributors mainly for contributing contents (i.e reports, dashboard, datasets, gateway connections); viewer can only view data stored in workspace and dataflows 
+
+#### 4.18 included in 'an app' is not available in 'my workplace'.
+#### 4.19 users do not have to have a pro license to view app but they need to have pro license to make a copy of the reports.
+#### 4.20 cross-report drill through: 1. Drill through section; 2. Option -> Current File -> report Settings -> Cross report drill through. 
+#### 4.21 allow export full data:  Option -> Current File -> report Settings -> Export data. 
+#### 4.22 personalized visuals: report setting -> enable personalized view (desktop: options -> Current File -> report settings -> enable personalized views)
+#### 4.23 XMLA needs power bi premium service. Allow you to use fully encrypted model to transfer data among vs studio, sql management studio. Admin portal -> Premium per user -> dataset workload settings XMLA endpoints. Workspace settings: workspace connection strings. Tenant settings -> allow live connections.
+
+#### 4.24 large dataset format: 1. PowerBi service premium; 2. good for XMLA endpoint; 3. dataset growing more than 10 GB.
+#### 4.25 data classification: 1. needs to be turned on by administrator; 2. Admin portal -> Tenant settings -> Dashboard settings -> data classification for dashboard. 
