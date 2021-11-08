@@ -1,5 +1,10 @@
 # Power BI note
 
+
+[My certification] (https://www.credly.com/badges/0b026589-f5d6-408d-a1c1-ce7ef79fcbae/linked_in)
+
+
+
 ### Study notes used when strengthening Power BI skills
 
 ## Part 1: Visualising data. 
@@ -180,3 +185,5 @@ ____________________________________________________________________
 
 #### 4.24 large dataset format: 1. PowerBi service premium; 2. good for XMLA endpoint; 3. dataset growing more than 10 GB.
 #### 4.25 data classification: 1. needs to be turned on by administrator; 2. Admin portal -> Tenant settings -> Dashboard settings -> data classification for dashboard. 
+
+
